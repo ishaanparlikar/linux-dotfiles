@@ -7,3 +7,5 @@ function nvm
     bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
 end
 set PATH ~/.nvm/versions/node/*/bin $PATH
+
+starship init fish | source
