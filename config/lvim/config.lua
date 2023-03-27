@@ -181,7 +181,9 @@ formatters.setup {
 lvim.plugins = {
   {
     "folke/trouble.nvim",
-    "catppuccin/nvim"
+    "catppuccin/nvim",
+    "ellisonleao/gruvbox.nvim",
+    "sainnhe/gruvbox-material",
   },
 }
 
