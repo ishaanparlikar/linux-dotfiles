@@ -1,0 +1,68 @@
+{
+  "layer": "bottom",
+    "modules-left": ["wlr/workspaces"],
+    "modules-center": [],
+    "modules-right": ["network", "pulseaudio", "temperature", "cpu", "memory","battery", "clock"],
+    "pulseaudio": {
+      "tooltip": false,
+      "scroll-step": 5,
+      "format": "{icon} {volume}%",
+       "format-muted": "󰖁",
+       "on-click":"gnome-control-center sound",
+      "format-icons": {
+        "default": ["奄", "奔", "墳"]
+      }
+    },
+    "network": {
+      "tooltip": false,
+      "format-wifi": " {essid}",
+      "format-ethernet": " {ipaddr}",
+      "on-click":"gnome-control-cente wifi"
+    },
+    "cpu": {
+      "tooltip": false,
+      "format": " {}%"
+    },
+    "memory": {
+      "tooltip": false,
+      "format": " {}%",
+    },
+   "clock": {
+        "format": "{:%a %d %b - %H:%M}",
+        "on-click": "gnome-calendar"
+    },
+   "battery":{
+      "format": "<span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}% - {time}",
+      "format-icons": ["", "", "", "", ""],
+      "format-time": "{H}h{M}m",
+      "format-charging": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}% - {time}",
+      "format-full": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  Charged",
+      "interval": 30,
+      "states": {
+        "warning": 25,
+        "critical": 10
+      },
+      "tooltip": false,
+      "on-click": "gnome-power-statistics"
+    },
+    "wlr/workspaces": {
+      "disable-scroll": true,
+      "on-click": "activate",
+      "all-outputs": false,
+      "format": "{icon}",
+      "format": "{name}",
+      "on-scroll-up": "hyprctl dispatch workspace m-1 > /dev/null",
+      "on-scroll-down": "hyprctl dispatch workspace m+1 > /dev/null",
+      "format-icons": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "urgent": "",
+        "focused": "",
+        "default": ""
+      }
+    },
+}
+
