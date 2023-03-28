@@ -184,6 +184,8 @@ lvim.plugins = {
     "catppuccin/nvim",
     "ellisonleao/gruvbox.nvim",
     "sainnhe/gruvbox-material",
+    "svrana/neosolarized.nvim",
+    "tjdevries/colorbuddy.nvim"
   },
 }
 
