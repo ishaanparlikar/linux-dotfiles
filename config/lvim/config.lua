@@ -10,7 +10,7 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = true
-lvim.colorscheme = "lunar"
+lvim.colorscheme = "tokyonight-night"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -87,7 +87,12 @@ lvim.builtin.treesitter.ensure_installed = {
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enable = true
 lvim.builtin.treesitter.autotag.enable = true
+
+
+-- custom keybindings
 vim.opt.wrap = true
+vim.opt.cmdheight = 0
+
 -- generic LSP settings
 
 -- -- make sure server will always be installed even if the server is in skipped_servers list
