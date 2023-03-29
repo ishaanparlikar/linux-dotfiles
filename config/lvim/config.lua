@@ -15,6 +15,16 @@ lvim.colorscheme = "tokyonight-night"
 -- lvim.use_icons = false
 require("luasnip.loaders.from_vscode").load({ paths = { "~/.config/lvim/snippets" } })
 -- keymappings [view all the defaults by pressing <leader>Lk]
+
+-- custom keybindings
+vim.opt.wrap = true
+vim.opt.cmdheight = 0
+vim.opt.hlsearch = false
+vim.opt.clipboard = "unnamedplus"
+vim.opt.relativenumber = true
+vim.opt.wrap = true
+
+
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
@@ -22,6 +32,8 @@ lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 
 lvim.keys.normal_mode["<leader>sv"] = ":vsplit<CR>"
+
+
 lvim.keys.normal_mode["x"] = '"_x'
 -- unmap a default keymapping
 -- vim.keymap.del("n", "<C-Up>")
@@ -92,9 +104,6 @@ lvim.builtin.treesitter.highlight.enable = true
 lvim.builtin.treesitter.autotag.enable = true
 
 
--- custom keybindings
-vim.opt.wrap = true
-vim.opt.cmdheight = 0
 
 -- generic LSP settings
 
@@ -193,7 +202,6 @@ lvim.plugins = {
     "ellisonleao/gruvbox.nvim",
     "sainnhe/gruvbox-material",
     "svrana/neosolarized.nvim",
-    "tjdevries/colorbuddy.nvim"
   },
 }
 
