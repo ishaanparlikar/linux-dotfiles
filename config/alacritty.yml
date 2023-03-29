@@ -47,7 +47,7 @@ window:
   # by DPI and the specified value is always added at both opposing sides.
   padding:
    x: 10
-   y: 20
+   y: 15
 
   # Spread additional padding evenly around the terminal content.
   #dynamic_padding: false
@@ -122,7 +122,7 @@ font:
       #- (Windows) Consolas
 
     # The `style` can be specified to pick a specific face.
-    #style: Regular
+    style: Regular
 
   # Bold font face
   bold:
@@ -136,15 +136,15 @@ font:
     style: Bold
 
   # Italic font face
-  #italic:
+  italic:
     # Font family
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    #family: monospace
+    family: ComicMono NF
 
     # The `style` can be specified to pick a specific face.
-    #style: Italic
+    style: Italic
 
   # Bold italic font face
   #bold_italic:
@@ -164,7 +164,7 @@ font:
   # spacing.
   offset:
    x: 1
-   y: 2
+   y: 10
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the
