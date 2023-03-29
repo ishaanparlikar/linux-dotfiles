@@ -16,6 +16,7 @@ lvim.colorscheme = "tokyonight-night"
 require("luasnip.loaders.from_vscode").load({ paths = { "~/.config/lvim/snippets" } })
 -- keymappings [view all the defaults by pressing <leader>Lk]
 
+lvim.transparent_window = true
 -- custom keybindings
 vim.opt.wrap = true
 vim.opt.cmdheight = 0
@@ -32,6 +33,9 @@ lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 
 lvim.keys.normal_mode["<leader>sv"] = ":vsplit<CR>"
+-- lvim.keys.normal_mode["<leader>dq"] = '<cmd>norm ysiW"<CR>'
+-- lvim.keys.normal_mode["<leader>sq"] = "<cmd>norm ysiW'<CR>"
+
 
 
 lvim.keys.normal_mode["x"] = '"_x'
@@ -202,10 +206,11 @@ lvim.plugins = {
     "ellisonleao/gruvbox.nvim",
     "sainnhe/gruvbox-material",
     "svrana/neosolarized.nvim",
+    "kylechui/nvim-surround",
   },
 }
 
-lvim.transparent_window = true
+
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- vim.api.nvim_create_autocmd("BufEnter", {
