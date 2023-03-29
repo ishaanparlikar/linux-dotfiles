@@ -13,7 +13,7 @@ lvim.format_on_save.enabled = true
 lvim.colorscheme = "tokyonight-night"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
-
+require("luasnip.loaders.from_vscode").load({ paths = { "~/.config/lvim/snippets" } })
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
 -- add your own keymapping
@@ -22,6 +22,7 @@ lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 
 lvim.keys.normal_mode["<leader>sv"] = ":vsplit<CR>"
+lvim.keys.normal_mode["x"] = '"_x'
 -- unmap a default keymapping
 -- vim.keymap.del("n", "<C-Up>")
 -- override a default keymapping
