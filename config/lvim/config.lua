@@ -41,6 +41,19 @@ lvim.keys.normal_mode["<leader>sv"] = ":vsplit<CR>"
 lvim.keys.normal_mode["<leader>#"] = [[:let @/ = '\<<C-r><C-w>\>'<CR>:set hlsearch<CR>]]
 
 
+-- Remove Caps Lock as a modifier for normal mode commands
+lvim.builtin.which_key.mappings["<CapsLock>"] = nil
+lvim.keys.insert_mode["<CapsLock>"] = "<Esc>"
+lvim.keys.visual_mode["<CapsLock>"] = "<Esc>"
+lvim.keys.command_mode["<CapsLock>"] = "<Esc>"
+-- Remap Caps Lock as Escape in insert mode
+vim.api.nvim_set_keymap('i', '<CapsLock>', '<Esc>', { noremap = true })
+
+-- Remap Caps Lock as Escape in visual mode
+vim.api.nvim_set_keymap('v', '<CapsLock>', '<Esc>', { noremap = true })
+
+-- Remap Caps Lock as Escape in command-line mode
+vim.api.nvim_set_keymap('c', '<CapsLock>', '<Esc>', { noremap = true })
 lvim.keys.normal_mode["x"] = '"_x'
 -- unmap a default keymapping
 -- vim.keymap.del("n", "<C-Up>")
