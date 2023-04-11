@@ -8,4 +8,6 @@ function nvm
 end
 set PATH ~/.nvm/versions/node/*/bin $PATH
 
+
+xmodmap -e "remove Lock = Caps_Lock" -e "keysym Caps_Lock = Escape"
 starship init fish | source
