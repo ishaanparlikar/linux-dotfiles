@@ -38,6 +38,9 @@ lvim.keys.normal_mode["<leader>sv"] = ":vsplit<CR>"
 
 
 
+lvim.keys.normal_mode["<leader>#"] = [[:let @/ = '\<<C-r><C-w>\>'<CR>:set hlsearch<CR>]]
+
+
 lvim.keys.normal_mode["x"] = '"_x'
 -- unmap a default keymapping
 -- vim.keymap.del("n", "<C-Up>")
@@ -176,7 +179,7 @@ formatters.setup {
     -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
     extra_args = { "--print-with", "100" },
     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
-    filetypes = { "typescript", "typescriptreact", "svelte", "css" },
+    filetypes = { "typescript", "typescriptreact", "html", "svelte", "css" },
   },
 }
 
@@ -206,7 +209,7 @@ lvim.plugins = {
     "ellisonleao/gruvbox.nvim",
     "sainnhe/gruvbox-material",
     "svrana/neosolarized.nvim",
-    "kylechui/nvim-surround",
+    "tpope/vim-surround"
   },
 }
 
