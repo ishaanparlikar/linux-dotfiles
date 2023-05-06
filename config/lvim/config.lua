@@ -151,7 +151,7 @@ lvim.builtin.treesitter.autotag.enable = true
 -- require("lvim.lsp.manager").setup("pyright", opts)
 
 require("lvim.lsp.manager").setup("emmet_ls", {
-  filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'svelte' },
+  filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'svelte', 'astro' },
   on_init = require("lvim.lsp").common_on_init,
   capabilities = require("lvim.lsp").common_capabilities(),
 })
@@ -164,6 +164,8 @@ require("lvim.lsp.manager").setup("svelte", {
     }
   }
 })
+
+require("lvim.lsp.manager").setup("astro", {})
 -- ---remove a server from the skipped list, e.g. eslint, or emmet_ls. !!Requires `:LvimCacheReset` to take effect!!
 -- ---`:LvimInfo` lists which server(s) are skipped for the current filetype
 lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
@@ -192,7 +194,7 @@ formatters.setup {
     -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
     extra_args = { "--print-with", "100" },
     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
-    filetypes = { "typescript", "typescriptreact", "html", "svelte", "css" },
+    filetypes = { "typescript", "typescriptreact", "html", "svelte", "css", "scss" },
   },
 }
 
