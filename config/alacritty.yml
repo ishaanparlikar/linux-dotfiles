@@ -1,7 +1,7 @@
 import:
   - ~/.config/alacritty/themes/themes/ayu_dark.yaml
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
-
+# test
 # Import additional configuration files
 #
 # Imports are loaded in order, skipping all missing files, with the importing
