@@ -23,8 +23,7 @@ vim.opt.cmdheight = 0
 vim.opt.hlsearch = false
 vim.opt.clipboard = "unnamedplus"
 vim.opt.relativenumber = true
-vim.opt.wrap = true
-
+vim.o.termguicolors = true
 
 lvim.leader = "space"
 -- add your own keymapping
@@ -94,13 +93,15 @@ lvim.keys.normal_mode["x"] = '"_x'
 --   w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
 -- }
 
+
+
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
-lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
+lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
@@ -155,6 +156,7 @@ require("lvim.lsp.manager").setup("emmet_ls", {
   on_init = require("lvim.lsp").common_on_init,
   capabilities = require("lvim.lsp").common_capabilities(),
 })
+require('lvim.lsp.manager').setup("numb")
 require("lvim.lsp.manager").setup("svelte", {
   settings = {
     svelte = {
@@ -164,6 +166,44 @@ require("lvim.lsp.manager").setup("svelte", {
     }
   }
 })
+
+-- start function to filter node_modules in  react go_to_defination
+
+local function filter(arr, fn)
+  if type(arr) ~= "table" then
+    return arr
+  end
+
+  local filtered = {}
+  for k, v in pairs(arr) do
+    if fn(v, k, arr) then
+      table.insert(filtered, v)
+    end
+  end
+
+  return filtered
+end
+
+local function filterReactDTS(value)
+  return string.match(value.targetUri, 'd.ts') == nil
+end
+
+require('lvim.lsp.manager').setup('tsserver', {
+  -- other options
+  handlers = {
+    ['textDocument/definition'] = function(err, result, method, ...)
+      if vim.tbl_islist(result) and #result > 1 then
+        local filtered_result = filter(result, filterReactDTS)
+        return vim.lsp.handlers['textDocument/definition'](err, filtered_result, method, ...)
+      end
+
+      vim.lsp.handlers['textDocument/definition'](err, result, method, ...)
+    end
+  }
+})
+
+
+-- end function to filter node_modules in  react go_to_defination
 
 require("lvim.lsp.manager").setup("astro", {})
 -- ---remove a server from the skipped list, e.g. eslint, or emmet_ls. !!Requires `:LvimCacheReset` to take effect!!
@@ -220,11 +260,24 @@ formatters.setup {
 lvim.plugins = {
   {
     "folke/trouble.nvim",
+    'ayu-theme/ayu-vim',
     "catppuccin/nvim",
-    "ellisonleao/gruvbox.nvim",
-    "sainnhe/gruvbox-material",
-    "svrana/neosolarized.nvim",
-    "tpope/vim-surround"
+    "tpope/vim-surround",
+    {
+      "phaazon/hop.nvim",
+      event = "BufRead",
+      config = function()
+        require("hop").setup()
+        vim.api.nvim_set_keymap("n", "s", ":HopChar2<cr>", { silent = true })
+        vim.api.nvim_set_keymap("n", "S", ":HopWord<cr>", { silent = true })
+      end,
+    },
+    {
+      "windwp/nvim-ts-autotag",
+      config = function()
+        require("nvim-ts-autotag").setup()
+      end,
+    },
   },
 }
 
