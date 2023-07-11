@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + d
-	rofi -modi drun -show drun -line-padding 4 \
+	rofi  -show drun -line-padding 4 \
                 -columns 2 -padding 50 -hide-scrollbar -terminal xfce4-terminal \
                 -show-icons -drun-icon-theme "Qogir-dark" -font "Droid Sans Regular 20"
 
@@ -16,13 +16,13 @@ super + d
 super + ctrl + d
 	rofi -modi drun -show window -line-padding 4 \
                 -columns 2 -padding 50 -hide-scrollbar -terminal xfce4-terminal \
-                -show-icons -drun-icon-theme "Qogir-dark" -font "Droid Sans Regular 10"
+                -show-icons -drun-icon-theme "Qogir-dark" -font "Droid Sans Regular 20"
 
 # show ssh sesssions
 super + shift + d
 	rofi -modi drun -show ssh -line-padding 4 \
                 -columns 2 -padding 50 -hide-scrollbar -terminal xfce4-terminal \
-                -show-icons -drun-icon-theme "Qogir-dark" -font "Droid Sans Regular 10"
+                -show-icons -drun-icon-theme "Qogir-dark" -font "Droid Sans Regular 20"
 
 # power-menu 
 super + shift + e
@@ -158,11 +158,11 @@ XF86AudioMute
 
 # Brightness up
 XF86MonBrightnessUp
-  xbacklight -inc 5
+  light -A 10
 
 # And brightness down
 XF86MonBrightnessDown
-  xbacklight -dec 5
+  light -U 10
 
 # Screenshot
 Print
@@ -176,7 +176,10 @@ super + b
   brave
 
 super + e 
-  thunar  
+  pcmanfm  
 
 super + F1
   ~/.config/bspwm/scripts/keybindings_rofi.sh
+
+super + v
+  rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
