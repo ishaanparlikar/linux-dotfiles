@@ -2,6 +2,7 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 alias lvim  "~/.local/bin/lvim"
+set -gx EDITOR nvim
 set fish_greeting
 function nvm
     bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
@@ -20,3 +21,5 @@ end
 # pnpm end
 # Neofetch
 fastfetch
+
+thefuck --alias | source
