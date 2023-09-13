@@ -10,31 +10,6 @@ M.general = {
     ["<leader>sh"] = { "<cmd>vs<CR>", "Split Horizontally", opts = { nowait = true } },
     ["<leader>bn"] = { "<cmd> enew <CR>", "New buffer" },
     ["<leader>bK"] = { "<cmd>bufdo bd<CR>", "Kill all Buffers", opts = { nowait = false } },
-    ["<leader>S"] = {
-      function()
-        require("spectre").open()
-      end,
-      "Open Search buffer",
-    },
-    ["<leader>sw"] = {
-      function()
-        require("spectre").open_file_search { select_word = true }
-      end,
-      "Search word in buffer",
-    },
-    ["<leader>q"] = {
-      function()
-        require("nvchad_ui.tabufline").close_buffer()
-      end,
-      "Close buffer",
-    },
-    ["<leader>qq"] = {
-      function()
-        require("nvchad_ui.tabufline").closeAllBufs()
-      end,
-      "Close buffer",
-    },
-    ["<leader>QQ"] = { "<cmd>qa<CR>", "Quit Neovim" },
   },
 }
 
@@ -59,6 +34,29 @@ M.git = {
 M.telescope = {
   n = {
     ["<leader>p"] = { "<cmd>Telescope projects<CR>", "Show Projects" },
+  },
+}
+
+M.spectre = {
+  n = {
+    ["<leader>S"] = {
+      function()
+        require("spectre").toggle()
+      end,
+      "Open Search buffer",
+    },
+    ["<leader>sw"] = {
+      function()
+        require("spectre").open_visual { select_word = true }
+      end,
+      "Search Current word",
+    },
+    ["<leader>sf"] = {
+      function()
+        require("spectre").open_file_search { select_word = true }
+      end,
+      "Search on current file",
+    },
   },
 }
 -- more keybinds!
