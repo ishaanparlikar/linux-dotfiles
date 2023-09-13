@@ -17,7 +17,7 @@ Utility Keyboard Shortcuts
 
 ###################
 
--> Open terminal (xfce4-terminal)
+-> Open terminal (alacritty)
 Super + Return
 
 -> App launcher (Rofi)

@@ -4,7 +4,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
-bspc monitor -d I II III IV V VI 
+bspc monitor -d I II III IV V VI VII 
 bspc config border_width         3
 bspc config window_gap          12
 
@@ -16,6 +16,7 @@ bspc config focus_follows_pointer true
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Brave-browser desktop='^2'follow=on
+bspc rule -a thunderbird desktop='^7'follow=on
 bspc rule -a discord desktop='^4'
 bspc rule -a github-desktop desktop='^5'
 bspc rule -a mplayer2 state=floating
@@ -45,15 +46,26 @@ nitrogen --restore &
 dex -a -s /etc/xdg/autostart/:~/.config/autostart/  &
 # Picom
 picom -b &
+
 # Network Applet
-#nm-applet --indicator &
+nm-applet --indicator &
+
+# discord
+com.discordapp.Discord --no-sandbox --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy &
+
+# Flameshot
+/usr/bin/flameshot &
 
 # GreenClip - Clipboard Manager
-greenclip daemon &
+/usr/bin/greenclip daemon &
+
+#thunderbird
+/usr/bin/thunderbird &
 
 # Cursor
 xsetroot -cursor_name left_ptr &
 
 # Low battery notifier
 ~/.config/bspwm/scripts/low_bat_notifier.sh
+
 
