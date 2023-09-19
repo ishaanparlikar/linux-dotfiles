@@ -49,7 +49,7 @@ local plugins = {
 
   {
     "kdheepak/lazygit.nvim",
-    lazy = false,
+    cmd = { "LazyGit" },
   },
   {
     "ahmedkhalf/project.nvim",
@@ -60,7 +60,7 @@ local plugins = {
   },
   {
     "nvim-pack/nvim-spectre",
-    lazy = false,
+    cmd = { "Spectre" },
   },
   -- To make a plugin not be loaded
   -- {

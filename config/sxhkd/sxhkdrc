@@ -9,19 +9,19 @@ super + Return
 # program launcher
 super + d
 	rofi  -show drun -line-padding 4 \
-                -columns 2 -padding 50 -hide-scrollbar -terminal xfce4-terminal \
+                -columns 2 -padding 50 -hide-scrollbar -terminal alacritty \
                 -show-icons -drun-icon-theme "Qogir-dark" -font "Droid Sans Regular 20"
 
 # show open window
 super + ctrl + d
 	rofi -modi drun -show window -line-padding 4 \
-                -columns 2 -padding 50 -hide-scrollbar -terminal xfce4-terminal \
+                -columns 2 -padding 50 -hide-scrollbar -terminal alacritty \
                 -show-icons -drun-icon-theme "Qogir-dark" -font "Droid Sans Regular 20"
 
 # show ssh sesssions
 super + shift + d
 	rofi -modi drun -show ssh -line-padding 4 \
-                -columns 2 -padding 50 -hide-scrollbar -terminal xfce4-terminal \
+                -columns 2 -padding 50 -hide-scrollbar -terminal alacritty \
                 -show-icons -drun-icon-theme "Qogir-dark" -font "Droid Sans Regular 20"
 
 # power-menu 
@@ -173,7 +173,7 @@ super + Print
 
 # Shortcuts
 super + b 
-  brave
+  com.brave.Browser
 
 super + e 
   pcmanfm  
@@ -183,3 +183,13 @@ super + F1
 
 super + v
   rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+
+# lockscreen
+alt + shift + x
+    betterlockscreen -l dim
+
+F12
+    tdrop -am -w 60% -y 30% -x 20% alacritty
+
+alt + shift + e
+    tdrop -am -w 60% -y 30% -x 20% pcmanfm
