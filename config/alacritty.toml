@@ -1,5 +1,4 @@
-import:
-  - ~/.config/alacritty/themes/themes/catppuccin.yaml
+import = "~/.config/alacritty/themes/themes/catppuccin.yaml"
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 # test
 # Import additional configuration files
