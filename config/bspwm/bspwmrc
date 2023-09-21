@@ -41,7 +41,7 @@ sh ~/.screenlayout/monitor.sh &
 /usr/bin/dunst &
 # Polkit
 # Wallpaper
-nitrogen --restore &
+variety &
 # Dex
 dex -a -s /etc/xdg/autostart/:~/.config/autostart/  &
 # Picom
