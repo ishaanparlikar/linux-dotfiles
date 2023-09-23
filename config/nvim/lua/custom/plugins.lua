@@ -62,6 +62,10 @@ local plugins = {
     "nvim-pack/nvim-spectre",
     cmd = { "Spectre" },
   },
+  {
+    "mbbill/undotree",
+    cmd = {"UndotreeToggle"}
+  }
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",

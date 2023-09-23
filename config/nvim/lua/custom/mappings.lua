@@ -59,6 +59,11 @@ M.spectre = {
     },
   },
 }
+M.undotree = {
+  n = {
+    ["<leader>u"] = { "<cmd>UndotreeToggle<CR>", "Toggle Undo Tree" }
+  }
+}
 -- more keybinds!
 
 return M
