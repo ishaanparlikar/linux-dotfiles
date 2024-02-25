@@ -10,7 +10,17 @@ M.general = {
     ["<leader>sh"] = { "<cmd>vs<CR>", "Split Horizontally", opts = { nowait = true } },
     ["<leader>bn"] = { "<cmd> enew <CR>", "New buffer" },
     ["<leader>bK"] = { "<cmd>bufdo bd<CR>", "Kill all Buffers", opts = { nowait = false } },
+    ["<A-j>"] = {"<Esc>:m .+1<CR>", "Move line down",opts={nowait=true}},
+    ["<A-k>"] = {"<Esc>:m .-2<CR>", "Move line up",opts={nowait=true}},
   },
+  i = {
+    ["<A-j>"] = {"<Esc>:m .+1<CR>==gi", "Move line down",opts={nowait=true}},
+    ["<A-k>"] = {"<Esc>:m .-2<CR>==gi", "Move line up",opts={nowait=true}},
+  },
+  v = {
+    ["<A-j>"] = { ":m '>+1<CR>gv-gv", "Move block one line down" },
+    ["<A-k>"] = { ":m '<-2<CR>gv-gv", "Move block one line up" },
+  }
 }
 
 M.nvimtree = {
