@@ -20,8 +20,12 @@ font:
     style: Italic
   offset:
     x: 1
-    y: 10
+    y: 0
 colors: {}
 shell:
   program: /bin/fish
+  args:
+    - -l
+    - -c
+    - "tmux -u attach || tmux -u"
 
