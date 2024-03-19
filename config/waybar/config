@@ -1,8 +1,8 @@
 {
   "layer": "bottom",
     "modules-left": ["wlr/workspaces"],
-    "modules-center": [],
-    "modules-right": ["network", "pulseaudio", "temperature", "cpu", "memory","battery", "clock"],
+    "modules-center": ["clock"],
+    "modules-right": ["network", "pulseaudio", "temperature", "cpu", "memory","battery"],
     "pulseaudio": {
       "tooltip": false,
       "scroll-step": 5,
@@ -17,7 +17,7 @@
       "tooltip": false,
       "format-wifi": " {essid}",
       "format-ethernet": " {ipaddr}",
-      "on-click":"gnome-control-cente wifi"
+      "on-click":"alacritty nm-tui"
     },
     "cpu": {
       "tooltip": false,
