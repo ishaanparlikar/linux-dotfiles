@@ -15,7 +15,7 @@ bspc config pointer_follows_focus false
 bspc config focus_follows_pointer true
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a Brave-browser desktop='^2'follow=on
+bspc rule -a floorp desktop='^2'follow=on
 bspc rule -a thunderbird desktop='^7'follow=on
 bspc rule -a discord desktop='^4'
 bspc rule -a github-desktop desktop='^5'

@@ -173,7 +173,7 @@ super + Print
 
 # Shortcuts
 super + b 
-  com.brave.Browser
+  flatpak run one.ablaze.floorp
 
 super + e 
   pcmanfm  

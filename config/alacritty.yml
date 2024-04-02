@@ -18,10 +18,13 @@ font:
   italic:
     family: CaskaydiaMono NFM
     style: Italic
+  offset:
+    x: 1
+    y: 0
 colors: {}
 shell:
   program: /bin/fish
-  args: 
+  args:
     - -l
     - -c
     - "tmux -u attach || tmux -u"
