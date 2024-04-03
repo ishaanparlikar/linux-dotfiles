@@ -46,6 +46,7 @@ map('n', '<S-Tab>', '<cmd> BufferPrevious <CR>', { desc = 'Previous Buffer' })
 
 map('n', '<leader>x', '<Cmd>BufferClose<CR>', { desc = 'Close buffer' })
 map('n', '<leader>q', '<Cmd>BufferClose<CR>', { desc = 'Close buffer' })
+map('n', '<leader>Q', '<Cmd>:qa!<CR>', { desc = 'Close Neovim' })
 
 -- Format
 map({ 'n', 'v' }, '<leader>=', function()
