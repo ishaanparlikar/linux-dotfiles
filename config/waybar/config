@@ -1,68 +1,114 @@
 {
-  "layer": "bottom",
-    "modules-left": ["wlr/workspaces"],
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 20, // Waybar height
+    // "width": 120, // Waybar width
+    // Choose the order of the modules
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
-    "modules-right": ["network", "pulseaudio", "temperature", "cpu", "memory","battery"],
-    "pulseaudio": {
-      "tooltip": false,
-      "scroll-step": 5,
-      "format": "{icon} {volume}%",
-       "format-muted": "󰖁",
-       "on-click":"gnome-control-center sound",
-      "format-icons": {
-        "default": ["奄", "奔", "墳"]
-      }
+    "modules-right": ["tray","pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "battery", "battery#bat2"],
+    // Modules configuration
+     "hyprland/workspaces": {
+         "disable-scroll": true,
+         "disable-markup" : false,
+         "all-outputs": true,
+         "format": "  {icon}  ",
+         "format-icons": {
+             "1": "󰈹",
+             "2": "",
+             "3": "",
+             "10": "",
+             "4": "",
+             "5": "",
+             "focused": "",
+             "default": ""
+         }
+     },
+		 "hyprland/window":{
+			 "max-length":150,
+		 },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
     },
-    "network": {
-      "tooltip": false,
-      "format-wifi": " {essid}",
-      "format-ethernet": " {ipaddr}",
-      "on-click":"alacritty nm-tui"
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "tooltip-format": "{:%Y-%m-%d | %H:%M}",
+        "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
-      "tooltip": false,
-      "format": " {}%"
+        "format": "{usage}% "
     },
     "memory": {
-      "tooltip": false,
-      "format": " {}%",
+        "format": "{}% "
     },
-   "clock": {
-        "format": "{:%a %d %b - %H:%M}",
-        "on-click": "gnome-calendar"
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C ",
+        "format": "{temperatureC}°C "
     },
-   "battery":{
-      "format": "<span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}% - {time}",
-      "format-icons": ["", "", "", "", ""],
-      "format-time": "{H}h{M}m",
-      "format-charging": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}% - {time}",
-      "format-full": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  Charged",
-      "interval": 30,
-      "states": {
-        "warning": 25,
-        "critical": 10
-      },
-      "tooltip": false,
-      "on-click": "gnome-power-statistics"
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "states": [0,50],
+        "format-icons": ["", ""]
     },
-    "wlr/workspaces": {
-      "disable-scroll": true,
-      "on-click": "activate",
-      "all-outputs": false,
-      "format": "{icon}",
-      "format": "{name}",
-      "on-scroll-up": "hyprctl dispatch workspace m-1 > /dev/null",
-      "on-scroll-down": "hyprctl dispatch workspace m+1 > /dev/null",
-      "format-icons": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "urgent": "",
-        "focused": "",
-        "default": ""
-      }
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
     },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    "network": {
+        // "interface": "wlp2s0", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "format-disconnected": "Disconnected ⚠",
+        "interval" : 7,
+				"on-click": "nm-connection-editor"
+    },
+    "pulseaudio": {
+        //"scroll-step": 1,
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+    }
 }
 
