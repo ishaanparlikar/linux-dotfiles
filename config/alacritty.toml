@@ -1,4 +1,4 @@
-import = ["/home/hazelnut/.config/alacritty/themes/themes/catppuccin.yml"]
+import = ["/home/hazelnut/.config/alacritty/themes/themes/github_dark_tritanopia.toml"]
 
 [font]
 size = 11.5
@@ -25,7 +25,7 @@ program = "/bin/fish"
 
 [window]
 dynamic_padding = false
-opacity = 0.98
+opacity = 0.9
 startup_mode = "Maximized"
 
 [window.padding]
