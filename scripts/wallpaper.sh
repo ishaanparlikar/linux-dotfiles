@@ -3,7 +3,7 @@
 #!/bin/bash
 
 # Set the path to the wallpapers directory
-wallpapersDir="$HOME/.dotfiles/wallpapers/"
+wallpapersDir="$HOME/Pictures"
 
 # Get a list of all image files in the wallpapers directory
 wallpapers=("$wallpapersDir"/*)
