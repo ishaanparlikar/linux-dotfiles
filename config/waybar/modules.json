@@ -22,13 +22,10 @@
     // Taskbar
     "wlr/taskbar": {
         "format": "{icon}",
-        "icon-size": 18,
+        "icon-size": 20,
         "tooltip-format": "{title}",
         "on-click": "activate",
         "on-click-middle": "close",
-        "ignore-list": [
-            "Alacritty"
-        ],
         "app_ids-mapping": {
             "firefoxdeveloperedition": "firefox-developer-edition"
         },
@@ -40,14 +37,15 @@
 
     // Hyprland Window
     "hyprland/window": {
+        "format": "",
         "rewrite": {
-            "(.*) - Brave": "$1",
-            "(.*) - Chromium": "$1",
+            "(.*) - Floorp": "$1",
+            "(.*) - Alacritty": "",
             "(.*) - Brave Search": "$1",
             "(.*) - Outlook": "$1",
             "(.*) Microsoft Teams": "$1"
         },
-        "separate-outputs": true
+        "separate-outputs": false
     },
 
 
@@ -102,7 +100,7 @@
 
     // Power Menu
     "custom/exit": {
-        "format": "",
+        "format": "⏻",
         "on-click": "wlogout",
         "tooltip": false
     },
@@ -194,12 +192,12 @@
     // Network
     "network": {
         "format": "{ifname}",
-        "format-wifi": "   {signalStrength}%",
-        "format-ethernet": "  {ipaddr}",
+        "format-wifi": "  {signalStrength}%",
+        "format-ethernet": " {ipaddr}",
         "format-disconnected": "Not connected", //An empty format will hide the module.
         "tooltip-format": " {ifname} via {gwaddri}",
-        "tooltip-format-wifi": "   {essid} ({signalStrength}%)",
-        "tooltip-format-ethernet": "  {ifname} ({ipaddr}/{cidr})",
+        "tooltip-format-wifi": " {essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": " {ifname} ({ipaddr}/{cidr})",
         "tooltip-format-disconnected": "Disconnected",
         "max-length": 50,
         "on-click": "alacritty -e nmtui"
@@ -208,13 +206,13 @@
     // Battery
     "battery": {
         "states": {
-            // "good": 95,
+            "good": 100,
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon}   {capacity}%",
-        "format-charging": "  {capacity}%",
-        "format-plugged": "  {capacity}%",
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
         "format-alt": "{icon}  {time}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
@@ -227,7 +225,7 @@
         "format": "{icon}  {volume}%",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
+        "format-muted": "",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
@@ -244,7 +242,7 @@
 
     // Bluetooth
     "bluetooth": {
-        "format-disabled": "",
+        "format-disabled": "󰂲",
         "format-off": "",
         "interval": 30,
         "on-click": "blueman-manager",
