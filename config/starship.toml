@@ -1,4 +1,5 @@
 format = """
+$shell\
 $username\
 $hostname\
 $directory\
@@ -44,3 +45,6 @@ style = "yellow"
 [python]
 format = "[$virtualenv]($style) "
 style = "bright-black"
+
+[shell]
+disabled = false
