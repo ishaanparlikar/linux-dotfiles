@@ -14,3 +14,4 @@ end
 # pnpm end
 
 thefuck --alias | source
+zoxide init fish | source
