@@ -55,6 +55,6 @@ size = 11
 #
 
 [shell]
-program = "/bin/fish"
+program = "/bin/zsh"
 args = [ "-l", "-c", "tmux -u attach || tmux -u" ]
 
