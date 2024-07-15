@@ -57,7 +57,7 @@ eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
 # Aliases
-alias ls='ls --color'
+alias ls='eza --color=always --long --git --level=2 --icons=always --no-filesize --no-time'
 alias vim='nvim'
 alias c='clear'
 
@@ -66,7 +66,6 @@ eval "$(starship init zsh)"
 
 
 eval "$(fzf --zsh)"
-eval "$(zoxide init --cmd cd zsh)"p
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -87,3 +86,58 @@ unset __conda_setup
 # fnm
 export PATH="/home/ishan/.local/share/fnm:$PATH"
 eval "$(fnm env --use-on-cd)"
+
+# Replace find with FD in FZF
+export FZF_DEFAULT_COMMAND='fd --hidden --follow --color=always --strip-cwd-prefix --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+
+
+# Use fd (https://github.com/sharkdp/fd) for listing path candidates.
+# - The first argument to the function ($1) is the base path to start traversal
+# - See the source code (completion.{bash,zsh}) for the details.
+_fzf_compgen_path() {
+  fd --hidden --exclude .git . "$1"
+}
+
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type=d --hidden --exclude .git . "$1"
+}
+
+show_file_or_dir_preview="if [ -d {} ]; then eza --tree --color=always {} | head -200; else bat -n --color=always --line-range :500 {}; fi"
+
+export FZF_CTRL_T_OPTS="--preview '$show_file_or_dir_preview'"
+export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
+
+_fzf_comprun() {
+  local command=$1
+  shift
+
+  case "$command" in
+    cd)           fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
+    export|unset) fzf --preview "eval 'echo \${}'"         "$@" ;;
+    ssh)          fzf --preview 'dig {}'                   "$@" ;;
+    *)            fzf --preview "$show_file_or_dir_preview" "$@" ;;
+  esac
+}
+
+# thefuck alias
+eval $(thefuck --alias)
+eval $(thefuck --alias fk)
+
+eval "$(zoxide init zsh)"
+alias cd="z"
+
+# Open File in Neovim with FZF,FD and tmux
+alias v="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
+
+eval "$(fnm env --use-on-cd)"
+
+# pnpm
+export PNPM_HOME="/home/ishan/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
