@@ -141,3 +141,8 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# Created by `pipx` on 2024-07-08 18:48:11
+export PATH="$PATH:/home/ishan/.local/bin"
+
+export NVIM_APPNAME=nvim
