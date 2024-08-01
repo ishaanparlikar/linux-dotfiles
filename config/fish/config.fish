@@ -13,5 +13,13 @@ if not string match -q -- $PNPM_HOME $PATH
 end
 # pnpm end
 
-thefuck --alias | source
+# set --export PATH "$HOME/.local/bin/" $PATH;
+
+#zoxide 
 zoxide init fish | source
+
+
+starship init fish | source
+
+
+fastfetch
