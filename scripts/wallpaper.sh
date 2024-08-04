@@ -9,7 +9,8 @@ wallpapersDir="$HOME/Pictures"
 wallpapers=("$wallpapersDir"/*)
 
 wal-tile() {
-    swww img "$@" && wal -i "$@"
+    # swww img "$@" && wal -i "$@"
+    swww img "$@"
 }
 # Start an infinite loop
 while true; do
