@@ -154,3 +154,7 @@ if [ -d "$FNM_PATH" ]; then
   eval "`fnm env`"
 fi
 export BROWSER=zen-browser
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
