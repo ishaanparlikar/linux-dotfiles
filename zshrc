@@ -84,8 +84,8 @@ unset __conda_setup
 
 
 # fnm
-export PATH="/home/ishan/.local/share/fnm:$PATH"
-eval "$(fnm env --use-on-cd)"
+# export PATH="/home/ishan/.local/share/fnm:$PATH"
+# eval "$(fnm env --use-on-cd)"
 
 # Replace find with FD in FZF
 export FZF_DEFAULT_COMMAND='fd --hidden --follow --color=always --strip-cwd-prefix --exclude .git'
@@ -132,7 +132,7 @@ alias cd="z"
 # Open File in Neovim with FZF,FD and tmux
 alias v="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
 
-eval "$(fnm env --use-on-cd)"
+# eval "$(fnm env --use-on-cd)"
 
 # pnpm
 export PNPM_HOME="/home/ishan/.local/share/pnpm"
@@ -146,3 +146,11 @@ esac
 export PATH="$PATH:/home/ishan/.local/bin"
 
 export NVIM_APPNAME=nvim
+
+# fnm
+FNM_PATH="/home/hazelnut/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/hazelnut/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
+export BROWSER=zen-browser
