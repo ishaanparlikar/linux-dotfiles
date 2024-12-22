@@ -158,3 +158,6 @@ export BROWSER=zen-browser
 . "$HOME/.atuin/bin/env"
 
 eval "$(atuin init zsh)"
+
+# Created by `pipx` on 2024-12-22 08:30:09
+export PATH="$PATH:/home/hazelnut/.local/bin"
