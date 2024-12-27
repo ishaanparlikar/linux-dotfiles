@@ -65,7 +65,6 @@ alias c='clear'
 eval "$(starship init zsh)"
 
 
-eval "$(fzf --zsh)"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -146,3 +145,25 @@ esac
 export PATH="$PATH:/home/ishan/.local/bin"
 
 export NVIM_APPNAME=nvim
+
+# fnm
+FNM_PATH="/home/ishan/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/ishan/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
+
+# eval "$(zellij setup --generate-auto-start zsh)"
+# if [ -z "$ZELLIJ" ]; then
+#   zellij attach || zellij
+# fi
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+eval "$(fzf --zsh)"
