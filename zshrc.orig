@@ -65,7 +65,6 @@ alias c='clear'
 eval "$(starship init zsh)"
 
 
-eval "$(fzf --zsh)"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -132,7 +131,7 @@ alias cd="z"
 # Open File in Neovim with FZF,FD and tmux
 alias v="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
 
-eval "$(fnm env --use-on-cd)"
+# eval "$(fnm env --use-on-cd)"
 
 # pnpm
 export PNPM_HOME="/home/ishan/.local/share/pnpm"
@@ -148,17 +147,26 @@ export PATH="$PATH:/home/ishan/.local/bin"
 export NVIM_APPNAME=nvim
 
 # fnm
+<<<<<<< HEAD
 FNM_PATH="/home/ishan/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
   export PATH="/home/ishan/.local/share/fnm:$PATH"
   eval "`fnm env`"
 fi
+=======
+FNM_PATH="/home/hazelnut/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/hazelnut/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
 export BROWSER=zen-browser
+>>>>>>> 9fe30034186fa2d864fa4020e1787dfe6a154998
 
 . "$HOME/.atuin/bin/env"
 
 eval "$(atuin init zsh)"
 
+<<<<<<< HEAD
 # eval "$(zellij setup --generate-auto-start zsh)"
 # if [ -z "$ZELLIJ" ]; then
 #   zellij attach || zellij
@@ -169,3 +177,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init -)"
 
 eval "$(fzf --zsh)"
+=======
+# Created by `pipx` on 2024-12-22 08:30:09
+export PATH="$PATH:/home/hazelnut/.local/bin"
+>>>>>>> 9fe30034186fa2d864fa4020e1787dfe6a154998
