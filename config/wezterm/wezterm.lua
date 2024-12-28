@@ -10,6 +10,6 @@ else
 end
 
 require("lua/keymaps").keys(config)
-require("lua/ui").ui(config, "tokyonight")
+require("lua/ui").ui(config, "GitHub Dark")
 
 return config
