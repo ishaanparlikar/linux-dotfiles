@@ -60,6 +60,11 @@ function module.keys(config)
 			mods = "LEADER",
 			action = wezterm.action.ActivatePaneDirection("Down"),
 		},
+		{
+			key = "r",
+			mods = "ALT|SHIFT",
+			action = wezterm.action.ReloadConfiguration,
+		},
 	}
 
 	-- tab naviagation
