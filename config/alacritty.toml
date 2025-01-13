@@ -1,4 +1,4 @@
-import = ["/home/hazelnut/.config/alacritty/themes/themes/github_dark_tritanopia.toml"]
+# import = ["/home/hazelnut/.config/alacritty/themes/themes/github_dark_tritanopia.toml"]
 
 [font]
 size = 11.5
@@ -19,10 +19,10 @@ style = "Regular"
 x = 1
 y = 0
 
-[shell]
-args = ["-l", "-c", "tmux -u attach || tmux -u"]
-program = "/bin/fish"
-
+# [terminal.shell]
+# args = ["-l", "-c", "tmux -u attach || tmux -u"]
+# program = "/bin/fish"
+#
 [window]
 dynamic_padding = false
 opacity = 0.9
