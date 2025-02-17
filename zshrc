@@ -153,7 +153,7 @@ if [ -d "$FNM_PATH" ]; then
   export PATH="/home/ishan/.local/share/fnm:$PATH"
   eval "`fnm env`"
 fi
-export BROWSER=zen-browser
+export BROWSER=firefox
 
 . "$HOME/.atuin/bin/env"
 
@@ -169,3 +169,6 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init -)"
 
 eval "$(fzf --zsh)"
+
+# Ani-cli directory
+# export ANI_CLI_DOWNLOAD_DIR="$HOME/Sakura/Media/data/media/anime/series/"
