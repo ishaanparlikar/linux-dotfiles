@@ -88,10 +88,6 @@ unset __conda_setup
 # eval "$(fnm env --use-on-cd)"
 
 # Replace find with FD in FZF
-export FZF_DEFAULT_COMMAND='fd --hidden --follow --color=always --strip-cwd-prefix --exclude .git'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
-
 
 # Use fd (https://github.com/sharkdp/fd) for listing path candidates.
 # - The first argument to the function ($1) is the base path to start traversal
@@ -132,7 +128,6 @@ alias cd="z"
 # Open File in Neovim with FZF,FD and tmux
 alias v="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
 
-eval "$(fnm env --use-on-cd)"
 
 # pnpm
 export PNPM_HOME="/home/ishan/.local/share/pnpm"
@@ -143,18 +138,6 @@ esac
 # pnpm end
 
 # Created by `pipx` on 2024-07-08 18:48:11
-export PATH="$PATH:/home/ishan/.local/bin"
-
-export NVIM_APPNAME=nvim
-
-# fnm
-FNM_PATH="/home/ishan/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="/home/ishan/.local/share/fnm:$PATH"
-  eval "`fnm env`"
-fi
-export BROWSER=firefox
-
 . "$HOME/.atuin/bin/env"
 
 eval "$(atuin init zsh)"
@@ -172,3 +155,21 @@ eval "$(fzf --zsh)"
 
 # Ani-cli directory
 # export ANI_CLI_DOWNLOAD_DIR="$HOME/Sakura/Media/data/media/anime/series/"
+
+# fnm
+FNM_PATH="/home/ishan/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/ishan/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
+
+eval "$(fnm env --use-on-cd)"
+
+export PATH="$PATH:/home/ishan/.local/bin"
+export NVIM_APPNAME=nvim
+export BROWSER=/usr/bin/brave-browser
+export FZF_DEFAULT_COMMAND='fd --hidden --follow --color=always --strip-cwd-prefix --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+export WAYLAND_DISPLAY=wayland-1
+
