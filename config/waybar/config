@@ -3,9 +3,7 @@
 	// General Settings
 	"layer": "top",
 		"margin-bottom": 2,
-		"margin-top": 2,
 		"layer": "top",
-		"width": 1575,
 		"margin-left": 0,
 		"margin-right": 0,    
 		"spacing": 0,

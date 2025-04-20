@@ -35,6 +35,7 @@ button:hover {
 
 #workspaces button {
     padding: 0 10px;
+    margin:3px 0;
     background-color: transparent;
     color: @text;
     border-radius: 10px;
@@ -42,7 +43,6 @@ button:hover {
 
 #workspaces button:hover {
     color:@green;
-    border: 1px solid green;
 }
 
 #workspaces button.focused {
@@ -53,7 +53,6 @@ button:hover {
     background-color: @mauve;
     color: @base;
 }
-
 
 
 #workspaces button.urgent {
@@ -148,11 +147,11 @@ button:hover {
     color: @base;
 }
 
-#battery.good:not(.charging), #pulseaudio.full, #custom-updates{
+#battery.good:not(.charging), #pulseaudio{
     color: @green;
 }
 
-#battery.warning:not(.charging){
+#battery.warning:not(.charging), #custom-updates.yellow{
     color: @yellow;
 }
 
