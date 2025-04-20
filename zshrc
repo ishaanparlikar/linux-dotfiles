@@ -157,15 +157,15 @@ eval "$(fzf --zsh)"
 # export ANI_CLI_DOWNLOAD_DIR="$HOME/Sakura/Media/data/media/anime/series/"
 
 # fnm
-FNM_PATH="/home/ishan/.local/share/fnm"
+FNM_PATH="$HOME/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
-  export PATH="/home/ishan/.local/share/fnm:$PATH"
+  export PATH="$HOME/.local/share/fnm:$PATH"
   eval "`fnm env`"
 fi
 
 eval "$(fnm env --use-on-cd)"
 
-export PATH="$PATH:/home/ishan/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 export NVIM_APPNAME=nvim
 export BROWSER=/usr/bin/brave-browser
 export FZF_DEFAULT_COMMAND='fd --hidden --follow --color=always --strip-cwd-prefix --exclude .git'

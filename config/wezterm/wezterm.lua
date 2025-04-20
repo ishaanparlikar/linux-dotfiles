@@ -9,7 +9,9 @@ local config = wezterm.config_builder()
 -- config.enable_wayland = true
 -- end
 
+config.enable_wayland = false
 config.front_end = "WebGpu"
+wezterm.dpi = 144
 
 require("lua/keymaps").keys(config)
 require("lua/ui").ui(config, "GitHub Dark")
