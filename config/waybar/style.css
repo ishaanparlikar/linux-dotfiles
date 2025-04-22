@@ -129,7 +129,7 @@ button:hover {
 #scratchpad,
 #mode,
 #tray,
-#custom-exit,#hardware{
+#custom-exit,#hardware, #power-profiles-daemon{
     padding: 0 5px;
     margin: 3px 0px;
     color: @text;
@@ -147,7 +147,7 @@ button:hover {
     color: @base;
 }
 
-#battery.good:not(.charging), #pulseaudio{
+#battery.good:not(.charging), #pulseaudio, #power-profiles-daemon.performance{
     color: @green;
 }
 
@@ -155,11 +155,11 @@ button:hover {
     color: @yellow;
 }
 
-#battery.critical:not(.charging),  #pulseaudio.mute, #custom-updates.red{
+#battery.critical:not(.charging),  #pulseaudio.mute, #custom-updates.red, #power-profiles-daemon.power-saver{
     color: @red;
 }
 
-#battery.charging, #battery.plugged, #pulseaudio.half {
+#battery.charging, #battery.plugged, #pulseaudio.half, #power-profiles-daemon.balenced {
     color: @mauve;
 }
 

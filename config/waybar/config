@@ -29,6 +29,7 @@
 		"custom/updates",
 		"pulseaudio",
 		"network",
+		"power-profiles-daemon",
 		"bluetooth",
 		"battery", 
 		"group/hardware",
