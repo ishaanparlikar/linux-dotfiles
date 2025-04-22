@@ -167,7 +167,7 @@ eval "$(fnm env --use-on-cd)"
 
 export PATH="$PATH:$HOME/.local/bin"
 export NVIM_APPNAME=nvim
-export BROWSER=/usr/bin/brave-browser
+# export BROWSER=/usr/bin/brave-browser
 export FZF_DEFAULT_COMMAND='fd --hidden --follow --color=always --strip-cwd-prefix --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
