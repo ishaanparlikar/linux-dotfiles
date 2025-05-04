@@ -12,7 +12,6 @@ function module.ui(config, colorscheme)
 	config.window_frame = {}
 	config.tab_bar_at_bottom = true
 	config.use_fancy_tab_bar = false
-	config.font_size = 18
 
 	config.window_padding = {
 		left = "1cell",
