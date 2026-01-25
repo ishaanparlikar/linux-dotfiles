@@ -14,6 +14,14 @@ zinit light zsh-users/zsh-autosuggestions
 # FZF Tab
 zinit light Aloxaf/fzf-tab
 
+# line 1: `atuin` binary as command, from github release, only look at .tar.gz files, use the `atuin` file from the extracted archive
+# line 2: setup at clone(create init.zsh, completion)
+# line 3: pull behavior same as clone, source init.zsh
+zinit ice as"command" from"gh-r" bpick"atuin-*.tar.gz" mv"atuin*/atuin -> atuin" \
+    atclone"./atuin init zsh > init.zsh; ./atuin gen-completions --shell zsh > _atuin" \
+    atpull"%atclone" src"init.zsh"
+zinit light atuinsh/atuin
+
 # Add in snippets
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
