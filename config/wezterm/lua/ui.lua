@@ -20,8 +20,7 @@ function module.ui(config, colorscheme)
 		bottom = "0.5cell",
 	}
 	-- font
-	config.font =
-		wezterm.font("MonaspiceNe Nerd Font Mono", { weight = "Regular", stretch = "Normal", style = "Normal" }) -- (AKA: MonaspiceNe NFM) /usr/local/share/fonts/m/MonaspiceNeNerdFontMono_Regular.otf, FontConfig
+	config.font = wezterm.font("MesloLGL Nerd Font Mono", { weight = "Regular", stretch = "Normal", style = "Normal" }) -- (AKA: MonaspiceNe NFM) /usr/local/share/fonts/m/MonaspiceNeNerdFontMono_Regular.otf, FontConfig
 
 	config.font_rules = {
 		-- Bold-and-italic
@@ -35,6 +34,9 @@ function module.ui(config, colorscheme)
 			}),
 		},
 	}
+
+	config.font_size = 13
+	config.line_height = 1.2
 
 	wezterm.on("update-right-status", function(window, _)
 		local SOLID_LEFT_ARROW = ""

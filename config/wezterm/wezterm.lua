@@ -6,6 +6,7 @@ local config = wezterm.config_builder()
 -- wezterm.dpi = 144
 
 require("lua/keymaps").keys(config)
-require("lua/ui").ui(config, "GruvboxDarkHard")
+require("lua/ui").ui(config, "Github Dark (Gogh)")
+config.enable_wayland = false
 
 return config
