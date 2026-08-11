@@ -1,0 +1,9 @@
+// DMS Window Rules - Managed by DankMaterialShell
+// Do not edit manually - changes may be overwritten
+
+// @id=wr_1772112076086947461 @name=Terminal
+window-rule {
+    match app-id="^org.wezfurlong.wezterm$" title="alacritty"
+    open-maximized true
+    open-on-workspace "browser"
+}

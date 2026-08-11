@@ -7,6 +7,6 @@ local config = wezterm.config_builder()
 
 require("lua/keymaps").keys(config)
 require("lua/ui").ui(config, "Github Dark (Gogh)")
-config.enable_wayland = false
+config.enable_wayland = true
 
 return config

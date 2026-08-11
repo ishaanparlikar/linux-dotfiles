@@ -1,0 +1,3 @@
+binds{
+    Mod+b hotkey-overlay-title="Open Browser" { spawn "helium-browser"; }
+}

@@ -1,0 +1,18 @@
+# see https://github.com/sigoden/aichat/blob/main/config.example.yaml
+
+model: ollama:gpt-oss:latest
+clients:
+- type: openai-compatible
+  name: ollama
+  api_base: http://andromeda:11434/v1
+  models:
+  - name: codellama:7b
+  - name: deepseek-coder:6.7b
+  - name: deepseek-r1:8b
+  - name: gpt-oss:latest
+  - name: llama3.2:latest
+  - name: mistral:7b
+  - name: qwen2.5-coder:3b
+  - name: qwen2.5-coder:7b
+  - name: qwen2.5:14b
+  - name: qwen3:4b
